@@ -24,6 +24,8 @@ class HomePage extends React.Component {
 
         console.log("Sending request to " + IP)
 
+        console.log("Generating room id : " + room_id)
+
         fetch(IP+"/register_room", {
             headers : {
                 "Content-Type" : "application/json",

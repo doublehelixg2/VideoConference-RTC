@@ -35,7 +35,7 @@ class VideoStreamer extends React.Component {
     render() {
         return (
            <div className = "card" style = {{margin : '30px auto', padding : '20px'}}>
-           <h5 className = "title">{this.props.room_id}</h5>
+           <h5 className = "title is-4">Room ID : {this.props.room_id}</h5>
                 <div id = "video_container">
                 </div>
            </div>

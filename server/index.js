@@ -5,7 +5,9 @@ var bp = require('body-parser')
 
 var cors = require('cors')
 
-const port = process.env.PORT || 8000;
+var config = require('./config.json')
+
+const port = process.env.PORT || config.port;
 
 var auth = require('./auth.js')
 
@@ -18,8 +20,6 @@ const path = require('path');
 const server = require('http');
 
 var rooms = {}
-
-  
 
 app.get('/', function(req, res) {
     res.sendFile(path.join(__dirname + '/index.html'));
@@ -46,7 +46,7 @@ app.post('/register_room', function(req, resp) {
 
 var httpServer = server.createServer(app);
 
-httpServer.listen(port, process.env.IP || "localhost", function() {
+httpServer.listen(port, process.env.IP || config.host , function() {
     console.log('Server is running on port ' + port);
 });
 
